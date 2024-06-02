@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Welcome to java script</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div id="container" style="padding: 2em 40% 2em 40%">
+
+            <!--<p style="text-align: center">Age User</p>-->
+            <!--<p style="text-align: center">Symbols</p>-->
+            <!--<p style="text-align: center">Save Value</p>-->
+            <!--<p style="text-align: center">Palindrome</p>-->
+            <!--<p style="text-align: center">Converter</p>-->
+            <p style="text-align: center">Special Offer</p>
+
+
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
+                </div>
+                <input id="InpUser" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSend" type="button" class="btn btn-outline-secondary">Send</button>
+            </div>
+            <div id="alerts" class="alert alert-light" role="alert"></div>
+            <!--------------------------------------------for 6-hw------------------------------------------------>
+            <div class="form-floating">
+                <select id="floatingSelect" class="form-select" aria-label="Floating label select example">
+                    <option id="currencyEuro" value="1">EURO</option>
+                    <option id="currencyUAN" value="2">UAN</option>
+                    <option id="currencyAZN" value="3">AZN</option>
+                </select>
+                <label for="floatingSelect">Select</label>
+            </div>
+            <!----------------------------------------------------------------------------------------------------->
+        </div>
+    </main>
+</body>
+<script>
+    document.getElementById("btnSend").onmouseover = () => { document.getElementById("btnSend").style.backgroundColor = "#6bd28a"; };
+    document.getElementById("btnSend").onmouseleave = () => { document.getElementById("btnSend").style.backgroundColor = "#ffffff"; };
+
+    /* Запросить у пользователя его возраст и определить, кем он
+       является: ребенком (0–2)*11 not 2, подростком (12–18), взрослым
+       (18_60) или пенсионером (60– ...).
+
+        document.getElementById("btnSend").onclick = () =>
+        {
+            let age = document.getElementById("InpUser").value;
+            if (age != null) {
+                if (age >= 0 && age <= 11) document.getElementById("alerts").innerText = "Child";
+                else if (age >= 12 && age <= 17) document.getElementById("alerts").innerText = "Boy";
+                else if (age >= 18 && age <= 59) document.getElementById("alerts").innerText = "Man";
+                else document.getElementById("alerts").innerText = "Retired";
+            }
+        };
+    */
+    /*Запросить у пользователя число от 0 до 9 и вывести ему
+        спецсимвол, который расположен на этой клавише (1–!,
+        2–@, 3–# и т. д).
+    document.getElementById("btnSend").onclick = () =>
+    {
+      if (document.getElementById("InpUser").value != null)
+      {
+          switch (parseInt(document.getElementById("InpUser").value))
+          {
+              //only english keyboard
+              case 0: document.getElementById("alerts").innerText = ")"; break;
+              case 1: document.getElementById("alerts").innerText = "!"; break;
+              case 2: document.getElementById("alerts").innerText = "@"; break;
+              case 3: document.getElementById("alerts").innerText = "#"; break;
+              case 4: document.getElementById("alerts").innerText = "$"; break;
+              case 5: document.getElementById("alerts").innerText = "%"; break;
+              case 6: document.getElementById("alerts").innerText = "^"; break;
+              case 7: document.getElementById("alerts").innerText = "&"; break;
+              case 8: document.getElementById("alerts").innerText = "*"; break;
+              case 9: document.getElementById("alerts").innerText = "("; break;
+              default:
+                  document.getElementById("alerts").innerText = "idk your symbol";
+          }
+      }
+    };*/
+    /* Запросить у пользователя трехзначное и число и проверить,
+        есть ли в нем одинаковые цифры    //такий собі лінійний алгоритм
+    document.getElementById("btnSend").onclick = () => {
+        if (document.getElementById("InpUser").value != null) {
+            let valueSameNumbers = parseInt(document.getElementById("InpUser").value);
+            if (valueSameNumbers >= 100 && valueSameNumbers <= 999) {
+
+                let firstNum = parseInt(valueSameNumbers / 100);
+                let secondNum = parseInt(valueSameNumbers % 100 / 10);
+                let thirtyNum = parseInt(valueSameNumbers % 10);
+
+                if      (firstNum == secondNum || firstNum == thirtyNum) { document.getElementById("alerts").innerText = "firstNum:True"; }
+                else if (secondNum == firstNum || secondNum == thirtyNum) { document.getElementById("alerts").innerText = "secondNum:True"; }
+                else document.getElementById("alerts").innerText = "False";
+            }
+        }
+    };*/
+    /* просить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+    document.getElementById("btnSend").onclick = () => {
+        if (document.getElementById("InpUser").value != null) {
+            let valuePalindrome = document.getElementById("InpUser").value;
+            for (let i = 0; i < valuePalindrome.length; ++i)
+            {
+               // console.log("start" + valuePalindrome[i] + "   " + valuePalindrome[valuePalindrome.length - i - 1] + "end");
+                if (valuePalindrome[i] != valuePalindrome[valuePalindrome.length - i - 1])
+                {
+                    document.getElementById("alerts").innerText = "Value isn't palindrome"; return;
+                }
+                else document.getElementById("alerts").innerText = "Value is palindrome"
+            }
+        }
+    };*/
+    /*Написать конвертор валют. Пользователь вводит количество USD, выбирает,
+      в какую валюту хочет перевести: EUR,
+      UAN или AZN, и получает в ответ соответствующую сумму.
+    document.getElementById("btnSend").onclick = () => {
+        if (document.getElementById("InpUser").value != null) {
+            let moneyConvertToCurrency = document.getElementById("InpUser").value;
+            switch (document.getElementById("floatingSelect").value)
+            {
+                case "1": document.getElementById("alerts").innerText = moneyConvertToCurrency * 0.92; break;
+                case "2": document.getElementById("alerts").innerText = moneyConvertToCurrency * 40.5; break;
+                case "3": document.getElementById("alerts").innerText = moneyConvertToCurrency * 1.7; break;
+            }
+        }
+    };*/
+    /*  Запросить у пользователя сумму покупки и вывести сумму
+        к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300
+        до 500 – 5%, от 500 и выше – 7%. */
+    document.getElementById("btnSend").onclick = () => {
+        if (document.getElementById("InpUser").value != null) {
+            let sumForBuying = document.getElementById("InpUser").value;
+            if (sumForBuying >= 200 && sumForBuying < 300)
+            {
+                let sumWithSpecialOffer = sumForBuying * 0.3;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                    + "\nSpecial Offer: " + (sumWithSpecialOffer);
+            }
+            else if (sumForBuying >= 300 && sumForBuying < 500)
+            {
+                let sumWithSpecialOffer = sumForBuying * 0.5;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                    + "\nSpecial Offer: " + (sumWithSpecialOffer);
+            }
+            else if (sumForBuying >= 500)
+            {
+                let sumWithSpecialOffer = sumForBuying * 0.7;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                    + "\nSpecial Offer: " + (sumWithSpecialOffer);
+            }
+        }
+    };
+</script>
+</html>
