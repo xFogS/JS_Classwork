@@ -138,20 +138,20 @@
             let sumForBuying = document.getElementById("InpUser").value;
             if (sumForBuying >= 200 && sumForBuying < 300)
             {
-                let sumWithSpecialOffer = sumForBuying * 0.3;
-                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                let sumWithSpecialOffer = 0.03;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - (sumForBuying * sumWithSpecialOffer))
                     + "\nSpecial Offer: " + (sumWithSpecialOffer);
             }
             else if (sumForBuying >= 300 && sumForBuying < 500)
             {
-                let sumWithSpecialOffer = sumForBuying * 0.5;
-                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                let sumWithSpecialOffer = 0.05;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - (sumForBuying * sumWithSpecialOffer))
                     + "\nSpecial Offer: " + (sumWithSpecialOffer);
             }
             else if (sumForBuying >= 500)
             {
-                let sumWithSpecialOffer = sumForBuying * 0.7;
-                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - sumWithSpecialOffer)
+                let sumWithSpecialOffer = 0.07;
+                document.getElementById("alerts").innerText = "End Sum: " + (sumForBuying - (sumForBuying * sumWithSpecialOffer))
                     + "\nSpecial Offer: " + (sumWithSpecialOffer);
             }
         }
