@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!--
+        1. Подсчитать сумму всех чисел в заданном пользователем
+           диапазоне.
+    -->
+    <!--
+        Запросить 2 числа и найти только наибольший общий
+        делитель.
+    -->
+    <!--
+        Запросить у пользователя число и вывести все делители
+        этого числа.
+    -->
+    -->
+    <main id="mainDocument">
+        <div id="container" style="padding: 2em 40% 2em 40%">
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="sumOfRange" type="number" value="all sum of range" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendSum" type="button" class="btn btn-outline-secondary">Send</button>
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="NOD1" type="number" value="Nod" class="form-control" aria-label="Text input with radio button">
+                <input id="NOD2" type="number" value="Nod" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendNod" type="button" class="btn btn-outline-secondary">Send</button>
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="numAllDivide" type="number" value="all Divide" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendNum" type="button" class="btn btn-outline-secondary">Send</button>
+            </div>
+            <div id="alerts" class="alert alert-light" role="alert"></div>
+        </div>
+    </main>
+</body>
+<script>
+
+    document.getElementById("btnSendSum").onclick = () =>
+    {
+        if (document.getElementById("sumOfRange").value != null) {
+            document.getElementById("alerts").innerText = "Answer: " + SumRange(document.getElementById("sumOfRange").value);
+        }
+    }
+    document.getElementById("btnSendNod").onclick = () =>
+    {
+        if (document.getElementById("NOD1").value != null && document.getElementById("NOD2").value != null) {
+            document.getElementById("alerts").innerText = "Answer: " + FindNod(
+                document.getElementById("NOD1").value,
+                document.getElementById("NOD2").value);
+        }
+    }
+    document.getElementById("btnSendNod").onclick = () =>
+    {
+        if (document.getElementById("numAllDivide").value != null) {
+            document.getElementById("alerts").innerText = "Answer: " + SumRange(document.getElementById("sumOfRange").value);
+        }
+    }
+    function SumRange(value)
+    {
+        if (value == null) return 0;
+        let sum = 0;
+        for (let i = 1; i <= value; ++i) { sum+= i; }
+        return sum;
+    }
+    function FindNod(x, y)
+    {
+        if (x == null || y == null) return 0;
+        while (true)
+        {
+            let r = x % y;
+            if (r == 0) return y; //y is Nod
+            x = y; y = r;
+        }
+    }
+    function FindAllDivide(value)
+    {
+        return 0;
+    }
+</script>
+</html>
