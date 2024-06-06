@@ -20,30 +20,96 @@
         Запросить у пользователя число и вывести все делители
         этого числа.
     -->
+    <!--
+        Определить количество цифр в введенном числе
     -->
+    <!--
+        Запросить у пользователя 10 чисел и подсчитать, сколько
+        он ввел положительных, отрицательных и нулей.
+
+        При этом также посчитать, сколько четных и нечетных.
+    -->
+    <!--Зациклить калькулятор-->
+    <!--Сдвинуть цифры-->
+    <!--View name of weekend-->
+    <!--Table's multiply-->
+    <!--Fantastic Number-->
     <main id="mainDocument">
         <div id="container" style="padding: 2em 40% 2em 40%">
+            <!--<div id="myModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Again</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your Choice</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
             <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
-                <input id="sumOfRange" type="number" value="all sum of range" class="form-control" aria-label="Text input with radio button">
-                <button id="btnSendSum" type="button" class="btn btn-outline-secondary">Send</button>
+                <input id="sumOfRange" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendSum" type="button" class="btn btn-outline-secondary">Sum</button>
             </div>
             <br>
             <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
-                <input id="NOD1" type="number" value="Nod" class="form-control" aria-label="Text input with radio button">
-                <input id="NOD2" type="number" value="Nod" class="form-control" aria-label="Text input with radio button">
-                <button id="btnSendNod" type="button" class="btn btn-outline-secondary">Send</button>
+                <input id="nod1" type="number" class="form-control" aria-label="Text input with radio button">
+                <input id="nod2" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendNod" type="button" class="btn btn-outline-secondary">NOD</button>
             </div>
             <br>
             <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
-                <input id="numAllDivide" type="number" value="all Divide" class="form-control" aria-label="Text input with radio button">
-                <button id="btnSendNum" type="button" class="btn btn-outline-secondary">Send</button>
+                <input id="numAllDivide" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendNum" type="button" class="btn btn-outline-secondary">AllDivide</button>
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="lengthNumber" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendValue" type="button" class="btn btn-outline-secondary">Length</button>
+            </div>
+            <!--<br>
+            <div class="input-group mb-3 my-3"> &lt;!&ndash;style="padding: 0 30% 0 30%"&ndash;&gt;
+                <input id="writeUserNums" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendStatic" type="button" class="btn btn-outline-secondary">Static</button>
+            </div>-->
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="num1" type="number" class="form-control" aria-label="Text input with radio button">
+                <input id="num1" type="number" class="form-control" aria-label="Text input with radio button">
+                <input id="symbol" type="text" class="form-control" aria-label="Text input with radio button" style="text-align: center">
+                <input id="num2" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendCalculate" type="button" class="btn btn-outline-secondary">Calculate</button>
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="numbersForMove" type="number" class="form-control" aria-label="Text input with radio button">
+                <input id="moveNumbers" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendMoveNum" type="button" class="btn btn-outline-secondary">Move</button>
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <input id="numberOfWeekend" type="number" class="form-control" aria-label="Text input with radio button">
+                <button id="btnSendDayOfWeekend" type="button" class="btn btn-outline-secondary">DayOfWeekend</button>
+               <!-- <button id="btnSendStopDayOfWeekend" type="button" class="btn btn-outline-secondary">Stop</button> -->
+            </div>
+            <br>
+            <div class="input-group mb-3 my-3"> <!--style="padding: 0 30% 0 30%"-->
+                <button id="btnSendNumMultiply" type="button" class="btn btn-outline-secondary" style="padding: 0.50em 41%">Multiply</button>
             </div>
             <div id="alerts" class="alert alert-light" role="alert"></div>
+            <button id="btnSendClearText" type="button" class="btn btn-outline-secondary" style="padding: 0.50em 41%">ClearTxt</button>
         </div>
     </main>
 </body>
 <script>
-
     document.getElementById("btnSendSum").onclick = () =>
     {
         if (document.getElementById("sumOfRange").value != null) {
@@ -52,18 +118,80 @@
     }
     document.getElementById("btnSendNod").onclick = () =>
     {
-        if (document.getElementById("NOD1").value != null && document.getElementById("NOD2").value != null) {
+        if (document.getElementById("nod1").value != null && document.getElementById("nod2").value != null) {
             document.getElementById("alerts").innerText = "Answer: " + FindNod(
-                document.getElementById("NOD1").value,
-                document.getElementById("NOD2").value);
+                document.getElementById("nod1").value,
+                document.getElementById("nod2").value);
         }
     }
-    document.getElementById("btnSendNod").onclick = () =>
+    document.getElementById("btnSendNum").onclick = () =>
     {
         if (document.getElementById("numAllDivide").value != null) {
-            document.getElementById("alerts").innerText = "Answer: " + SumRange(document.getElementById("sumOfRange").value);
+            FindAllDivide(document.getElementById("numAllDivide").value);
         }
     }
+    document.getElementById("btnSendValue").onclick = () => {
+        if (document.getElementById("lengthNumber").value != null) {
+            document.getElementById("alerts").innerText = "Length: " +
+                GetLengthNum(document.getElementById("lengthNumber").value);
+        }
+    }
+
+    /*let positiveNums = 0, negativeNums = 0, zeroNums = 0, evenNums = 0, oddNums = 0;
+    for (let i = 1; i <= 3; ++i)
+    {
+        document.getElementById("btnSendStatic").onclick = () =>
+        {
+            if (document.getElementById("writeUserNums").value != null) {
+                UserStaticsCount(document.getElementById("writeUserNums").value);
+            }
+        }
+        if (i == 3)
+        {
+            document.getElementById("alerts").innerText = "pos: " + positiveNums + " neg: " + negativeNums
+                + " zero: " + zeroNums + " even: " + evenNums + " odd: " + oddNums;
+
+        }
+    }*/
+
+    document.getElementById("btnSendCalculate").onclick = () =>
+    {
+        /*while (isAgain != false)
+        {*/
+            if (document.getElementById("num1").value != null && document.getElementById("num2").value != null) {
+                document.getElementById("alerts").innerText = "Answer: " + Calculate(
+                    document.getElementById("num1").value,
+                    document.getElementById("symbol").value,
+                    document.getElementById("num2").value);
+            }
+        /*}*/
+    }
+
+    document.getElementById("btnSendMoveNum").onclick = () =>
+    {
+        if (document.getElementById("numbersForMove").value != null && document.getElementById("moveNumbers").value != null) {
+            MoveNumber(
+                document.getElementById("numbersForMove").value,
+                document.getElementById("moveNumbers").value);
+        }
+    }
+
+    document.getElementById("btnSendDayOfWeekend").onclick = () =>
+    {
+        if (document.getElementById("numberOfWeekend").value != null) {
+            MoveNextWeekend(document.getElementById("numberOfWeekend").value);
+        }
+    }
+
+    document.getElementById("btnSendNumMultiply").onclick = () =>
+    {
+        TableMultiply();
+    }
+
+    ////////////////////CLEAR CHAT ALERTS/////////////////////////
+    document.getElementById("btnSendClearText").onclick = () =>
+        document.getElementById("alerts").innerText = "";
+    /////////////////////////////////////////////////////////////
     function SumRange(value)
     {
         if (value == null) return 0;
@@ -83,7 +211,102 @@
     }
     function FindAllDivide(value)
     {
+        document.getElementById("alerts").innerText = "";
+        if (value == null) return 0;
+        let i = 1;
+        while (i <= value / 2)
+        {
+            if (value % i == 0)
+                document.getElementById("alerts").innerText += ' ' + i;
+            ++i;
+        }
+        document.getElementById("alerts").innerText += ' ' + value;
+    }
+    function GetLengthNum(value)
+    {
+        if (value == null) return 0;
+        return value.length;
+    }
+    function UserStaticsCount(value)
+    {
+        console.log(value);
+        if      (value == 0)   return ++zeroNums;
+        else if (value < 0)    return ++negativeNums;
+        else if (value > 0)    return ++positiveNums;
+        else if (value % 2==0) return ++evenNums;
+        else if (value % 2==1) return ++oddNums;
+    }
+    function Calculate(num1, symbol, num2)
+    {
+        if (symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/')
+        {
+            if      (symbol == '+') return  num1 + num2;
+            else if (symbol == '-') return  num1 - num2;
+            else if (symbol == '*') return  num1 * num2;
+            else if (symbol == '/') return  num1 / num2;
+        }
         return 0;
+    }
+    //func isn't my
+    function MoveNumber(value, move)
+    {
+        let base_number = value
+        let jump = Math.abs(
+            Math.trunc(
+                move
+            )
+        );
+        let arr = base_number.split("");
+        jump = jump % arr.length;
+        let leftJump_L = arr.slice(0, jump);
+        let leftJump_R = arr.slice(jump, arr.length);
+        alert(
+            `Сдвиг влево "${base_number}" на ${jump} позиций:  ` +
+            leftJump_R.concat(leftJump_L).join("")
+        ); //объединяем 2 половины
+        let rightJump_L = arr.slice(0, arr.length - jump);
+        let rightJump_R = arr.slice(arr.length - jump, arr.length);
+        alert(
+            `Сдвиг вправо "${base_number}" на ${jump} позиций:  ` +
+            rightJump_R.concat(rightJump_L).join("")
+        );
+        /*let arr = value.slice("");
+        move = move%arr.length;
+        let leftJump_L = arr.slice(0, move);
+        let leftJump_R = arr.slice(move, arr.length);
+        document.getElementById("alerts").innerText += "  left: " + value + " on " + move + "pos: " +
+                leftJump_R.concat(leftJump_L.join(""));
+        let rightJump_L = arr.slice(0, arr.length - move);
+        let rightJump_R = arr.slice(arr.length - move, arr.length);
+        document.getElementById("alerts").innerText += "  right: " + value + " on "+ move + "pos: " +
+                rightJump_R.concat(rightJump_L).join("")*/
+    }
+    function MoveNextWeekend(dayOfWeek)
+    {
+        let arrWeek = [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Sunday",
+          "Saturday"
+        ];
+        let i = dayOfWeek - 1;
+        if (i < 0 || i > 6) i = 0;
+        document.getElementById("alerts").innerText = arrWeek[i]; ++i;
+    }
+    function TableMultiply()
+    {
+        document.getElementById("alerts").innerText = "";
+        for (let i = 2; i <= 9; ++i)
+        {
+            for (let j = 1; j <= 10; ++j)
+            {
+                document.getElementById("alerts").innerText += i + " * " + j + " = " + i*j + '\n';
+            }
+            document.getElementById("alerts").innerText += '\n';
+        }
     }
 </script>
 </html>
