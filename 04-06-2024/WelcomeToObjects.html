@@ -4,68 +4,96 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<style>
-    table, tr, th
-    {
-        border: 1px solid black;
-        border-radius: 10px;
-    }
-    tr, th
-    {
-        padding: 10px;
-    }
-</style>
 <body>
-
-    <table id="tbCarStatic">
-
-    </table>
+    <div id="container">
+    </div>
 </body>
 <script>
-    /*fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
-        .then(response => response.json())
-        .then(exchangeArray => {
-            console.log(exchangeArray)
-        })*/
-    /*var car = new Object()
-    car["manufacturer"] = "Mercedes";
-    car["model"] = "AMG";
-    car["year"] = "2020";
-    car["amountSpeed"] = "150";
 
-    console.log(car.manufacturer);
-    delete car.manufacturer; //delete
-    console.log(car.manufacturer);
-    car.manufacturer = "Mercedes then delete"
-    console.log(car.manufacturer);
-
-    if ("model" in car)//checked
-        alert("true");*/
-
-    //third method
-    let car = {
+    let transport = {
         manufacturer: "Mercedes",
-        model: "AMG",
-        year: "2021",
-        amountSpeed: "150"
+        model: "Mercedes-Benz SL 60 AMG",
+        year: "1993–1998",
+        amountSpeed: "125"
     };
-    for (temp in car)
-    {
-        let createth = document.createElement("th");
-        let createtd = document.createElement("td");
-        createtd.innerText = temp + '\n' + car[temp];
-        createth.appendChild(createtd);
-        document.getElementById("tbCarStatic").appendChild(createth);
+    let fraction = {
+        valueFirst: 56,
+        valueSecond: 94
     }
-    document.getElementById("tbCarStatic").onmouseover = () =>
+    function getAddFraction(val1, val2)
     {
-        document.getElementById("tbCarStatic").style.transition = "all .20s ease-in 0s";
-        document.getElementById("tbCarStatic").style.background = "green";
+        if (val1 != null && val2 != null
+           && val1 < val2)
+            return val1 + val2;
     }
-    document.getElementById("tbCarStatic").onmouseleave = () =>
+    /*. Функция вычитания 2-х объектов-дробей.*/
+    function getMinusFraction(val1, val2)
     {
-        document.getElementById("tbCarStatic").style.transition = "all .20s ease-in 0s";
-        document.getElementById("tbCarStatic").style.background = "white";
+        if (val1 != null && val2 != null
+            && val1 < val2)
+            return val1 - val2;
+    }
+    function getMultiplyFraction(val1, val2)
+    {
+        if (val1 != null && val2 != null
+            && val1 < val2)
+            return val1 * val2;
+    }
+    function getDivideFraction(val1, val2)
+    {
+        if (val1 != null && val2 != null
+            && val1 < val2)
+            return val1 / val2;
+    }
+    function getAbbreviationsFraction(val1, val2)
+    {
+        if (val1 != null && val2 != null
+            && val1 < val2)
+        {
+             return val1 / val2;
+        }
+    }
+
+    /*getViewCharacteristicByTransport(transport);
+    getCountTimeWithAmountSpeed(transport, 40);*/
+    function getViewCharacteristicByTransport(transportObj)
+    {
+        for (characteristic in transportObj)
+            console.log(characteristic + '\n' + transportObj[characteristic])
+    }
+    function getCountTimeWithAmountSpeed(transportObj, distance)
+    {
+            //t? t = d/s | time = distance/speed
+        let t = distance / transportObj.amountSpeed;
+        let timeTotal = ((t%4 == 0)? (t/4 | 0) - 1: t/4| 0) + t;
+        return  timeTotal;
+    }
+    /*  Функция изменения времени на переданное количество
+секунд */
+    let timeBD = {
+        hour: 20,
+        minute: 30,
+        second: 0
+    }
+    getFullTime(timeBD)
+    console.log(setNewTimeOnlySecond(timeBD, 365));
+    function getFullTime(dtObj)
+    {
+        for (dt in dtObj) console.log(dt + ' ' + dtObj[dt])
+    }
+    function setNewTimeOnlySecond(dtObj, sec)
+    {
+        dtObj.second = sec;
+        if (dtObj.second >= 60) {
+            dtObj.minute += parseInt((dtObj.second / 60), 0); dtObj.second = 0;
+            if (dtObj.minute >= 60) {
+                dtObj.hour += parseInt((dtObj.minute / 60), 0); dtObj.minute = 0
+                if (dtObj.hour >= 24)
+                    dtObj.hour = 0;
+
+            }
+        }
+        return dtObj.hour+':'+dtObj.minute+':'+dtObj.second;
     }
 </script>
 </html>
