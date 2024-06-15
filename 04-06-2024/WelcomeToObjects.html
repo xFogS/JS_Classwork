@@ -19,27 +19,27 @@
 </style>
 <body>
     <main>
-        <div id="container" style="padding: 2em 40% 2em 40%">
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                    <!--Model by transport-->
-                    <button id="btnAllCharacteristicModelByCar" type="button" class="btn btn-dark btn-outline-success">1</button>
-                    <button id="btnCountDistanceByCar" type="button" class="btn btn-dark btn-outline-success">2</button>
-                    <!--Model by Fraction-->
-                    <button id="btnAddFraction" type="button" class="btn btn-dark btn-outline-info">1</button>
-                    <button id="btnMinusFraction" type="button" class="btn btn-dark btn-outline-info">2</button>
-                    <button id="btnMultiplyFraction" type="button" class="btn btn-dark btn-outline-info">3</button>
-                    <button id="btnDivideFraction"  type="button" class="btn btn-dark btn-outline-info">4</button>
-                    <button id="btnAbbreviationFraction" type="button" class="btn btn-dark btn-outline-info">5</button>
-                    <!--Model by DateTime-->
-                    <button id="btnOutputDateTime" type="button" class="btn btn-dark btn-outline-warning">1</button>
-                    <button id="btnChangeDTWithSeconds" type="button" class="btn btn-dark btn-outline-warning">2</button>
-                    <button id="btnChangeDTWithMinutes" type="button" class="btn btn-dark btn-outline-warning">3</button>
-                    <button id="btnChangeDTWithHours" type="button" class="btn btn-dark btn-outline-warning">4</button>
-                </div> <br>
-                <div id="alerts" class="alert alert-light" role="alert" style="margin-top: 10%"></div>
-                <button id="btnClearChatAlerts" type="button" class="btn btn-dark">Clear</button>
-            </div>
+        <div id="container" style="padding: 2em 45% 2em 45%">
+                <div class="container text-center">
+                    <div class="row row-cols-4">
+                        <!--MODEL-->
+                        <div class="col"><button id="btnAllCharacteristicModelByCar" type="button" class="btn btn-dark btn-outline-success">1</button></div>
+                        <div class="col"><button id="btnCountDistanceByCar" type="button" class="btn btn-dark btn-outline-success">2</button></div>
+                        <!--FRACTION-->
+                        <div class="col"><button id="btnAddFraction" type="button" class="btn btn-dark btn-outline-info">1</button></div>
+                        <div class="col"><button id="btnMinusFraction" type="button" class="btn btn-dark btn-outline-info">2</button></div>
+                        <div class="col"><button id="btnMultiplyFraction" type="button" class="btn btn-dark btn-outline-info">3</button></div>
+                        <div class="col"><button id="btnDivideFraction"  type="button" class="btn btn-dark btn-outline-info">4</button></div>
+                        <div class="col"><button id="btnAbbreviationFraction" type="button" class="btn btn-dark btn-outline-info">5</button></div>
+                        <!--DATETIME-->
+                        <div class="col"><button id="btnOutputDateTime" type="button" class="btn btn-dark btn-outline-warning">1</button></div>
+                        <div class="col"><button id="btnChangeDTWithSeconds" type="button" class="btn btn-dark btn-outline-warning">2</button></div>
+                        <div class="col"><button id="btnChangeDTWithMinutes" type="button" class="btn btn-dark btn-outline-warning">3</button></div>
+                        <div class="col"><button id="btnChangeDTWithHours" type="button" class="btn btn-dark btn-outline-warning">4</button></div>
+                    </div>
+                    <div id="alerts" class="alert alert-light" role="alert" style="margin-top: 8%"></div>
+                    <div class="col"><button id="btnClearChatAlerts" type="button" class="btn btn-dark btn-outline-danger">Clear</button></div>
+                </div>
         </div>
     </main>
 </body>

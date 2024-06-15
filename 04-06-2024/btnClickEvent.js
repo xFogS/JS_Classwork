@@ -48,3 +48,13 @@ document.getElementById("btnChangeDTWithSeconds").onclick = () =>
     let vtimeSec = Number(prompt("input time in second(s)", ""));
     document.getElementById("alerts").innerText = setNewTimeOnlySecond(timeBD, vtimeSec);
 }
+document.getElementById("btnChangeDTWithMinutes").onclick = () =>
+{
+    let vtimeMin = Number(prompt("input time in Minute(s)", ""));
+    document.getElementById("alerts").innerText = setNewTimeOnlyMinute(timeBD, vtimeMin);
+}
+document.getElementById("btnChangeDTWithHours").onclick = () =>
+{
+    let vtimeHour = Number(prompt("input time in Hour(s)", ""));
+    document.getElementById("alerts").innerText = setNewTimeOnlyHour(timeBD, vtimeHour);
+}
