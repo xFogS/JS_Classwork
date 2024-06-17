@@ -54,5 +54,5 @@ function getSimpleNum(num, divisor = 2)
     if (num < 2) return false
     if (divisor == num) return true
     else if (num % divisor == 0) return false
-    return getSimpleNum(num, divisor + 1)
+    return getSimpleNum(num, divisor + 1
 }
