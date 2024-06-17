@@ -6,5 +6,27 @@
 </head>
 <body>
     <h1>Here you can create text</h1>
+    <button id="updPage">update</button>
+    <button id="stopInterval">stop</button>
 </body>
+<script>
+    document.getElementById("updPage").onclick = () =>
+    {
+        window.location.reload();
+        return false;
+    }
+    document.getElementById("stopInterval").onclick = () =>
+    {
+        clearInterval(id);
+    }
+    //let inp = prompt("inp text: ")
+    let id = setInterval(rndMathNumbers, 1)
+
+    function rndMathNumbers()
+    {
+        let a = Math.round(Math.random() * 100) % 10
+        let b = Math.round(Math.random() * 100) % 10
+        return console.log(a + '+' + b + '=' + Number(a + b));
+    }
+</script>
 </html>
