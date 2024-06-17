@@ -29,15 +29,30 @@ function getNod(x, y)
     return getNod(x, y)
 }
 // Написать функцию для поиска максимальной цифры в числе.
-document.getElementById("btnMaxNum").onclick = () =>
+document.getElementById("btnMaxDigit").onclick = () =>
 {
-    document.getElementById("alerts").innerText = getMaxNum(prompt("1. inp num: "))
+    document.getElementById("alerts").innerText = getMaxDigit(prompt("1. inp num: "))
 }
-function getMaxNum(num)
+
+function getMaxDigit(num)
 {
-    let arrNum = num.toArray();
-    for (let i = 0; i < arrNum.length; ++ i)
-    {
-        document.getElementById("alerts").innerText += arrNum[i];
-    }
+   if (num < 10) return num;
+   else
+   {
+       let max = getMaxDigit(Math.floor(num / 10));
+       let last = num % 10;
+       return Math.max(last, max);
+   }
+}
+/*SimpleNum*/
+document.getElementById("btnSimpleNum").onclick = () =>
+{
+    document.getElementById("alerts").innerText = getSimpleNum(prompt("1. inp num: "))
+}
+function getSimpleNum(num, divisor = 2)
+{
+    if (num < 2) return false
+    if (divisor == num) return true
+    else if (num % divisor == 0) return false
+    return getSimpleNum(num, divisor + 1)
 }
