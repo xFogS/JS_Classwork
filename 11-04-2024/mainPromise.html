@@ -5,51 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Main</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<!--
-    Опишите возможность установки дел 3 важности,
-    которые будут выполнятся случайным образом - или не выполнятся вообще.
-    Например - надо вынести елку - вынесу ее через столько то или вообще не вынесу
--->
 <body>
+
 </body>
 <script>
     let isTakeOutTheChristmasTree = false;
-    let takeOutTheChristmasTree = new Promise(function (resolve, reject)
+    function takeOutTheChristmasTree()
     {
-        resolve();
-        console.log("start")
-        let whenIDoThis = Math.floor(Math.random() * 10)
-        console.log(whenIDoThis)
-        setTimeout(function ()
+        return new Promise(function (resolve, reject)
         {
-            whenIDoThis = true;
-            return "I do this!! I'm happy!!!"
-        }, whenIDoThis + 1000)
-    });
-    let notTakeOutTheChristmasTree = new Promise(function (resolve, reject)
+            console.log("I'm started...")
+            let whenIDoThisTime = Math.floor(Math.random() * 10) + Math.floor(Math.random() * 1000)
+           // console.log(whenIDoThisTime)
+            setTimeout(() =>
+            {
+                resolve(); isTakeOutTheChristmasTree = true;
+            }, whenIDoThisTime)
+        });
+    }
+    function notTakeOutTheChristmasTree()
     {
-        resolve();
-        if (isTakeOutTheChristmasTree === false)
-            return "I can't do this!"
-
-        console.log("end")
-        let whenIDoThis = Math.floor(Math.random() * 10)
-        console.log(whenIDoThis)
-        setTimeout(function ()
+        return new Promise(function (resolve, reject)
         {
-            whenIDoThis = true;
-            return "I don't do this!"
-        }, whenIDoThis + 3000)
-    });
+            if (isTakeOutTheChristmasTree === false)
+                reject("I can't do this!");
 
+            let whenIDoThisTime = Math.floor(Math.random() * 10) + Math.floor(Math.random() * 1000)
+            //console.log(whenIDoThisTime)
+            setTimeout(() =>
+            {
+                resolve(); isTakeOutTheChristmasTree = false;
+            }, whenIDoThisTime)
+        });
+    }
+    document.onclick = () =>
+    {
+        takeOutTheChristmasTree()
+            .then(() => console.log("I do this!! I'm happy!!! "))
+            //.catch((err) => {console.log(err)})
+        notTakeOutTheChristmasTree()
+            .then(() => console.log("I don't do this! "))
+            .catch((err) => {console.log(err)})
+    }
 
-    takeOutTheChristmasTree
-        .then(resolve =>
-            console.log(resolve))
-    notTakeOutTheChristmasTree
-        .then(reject =>
-            console.log(reject))
 </script>
 </html>
