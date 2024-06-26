@@ -13,7 +13,7 @@ document.getElementById("btnSendRequest").onclick = function ()
         case 2: {category = 'Episode'; break;}
     }
 
-    fetch('http://www.omdbapi.com/?i=tt3896198&apikey=b307a83f',
+    fetch('',
         {
             method: 'POST',
             body: JSON.stringify(
