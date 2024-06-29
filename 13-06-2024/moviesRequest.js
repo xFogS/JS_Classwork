@@ -9,7 +9,7 @@ document.getElementById("btnSendRequest").onclick = () => {
     let category = document.getElementById("selectOfType")[indxOfSelectToType].text;
 
     const url = 'http://www.omdbapi.com/?'
-    const apiKey = '&apikey=b307a83f'
+    const apiKey = '&apikey=00000000' //here should was your api key
     /*let countOfPage = 1;
         while (countOfPage <= 10) {*/
     //let dt = new Date().getFullYear() - (new Date().getFullYear() % parseInt((Math.random() + 1) * 25))
@@ -21,6 +21,7 @@ document.getElementById("btnSendRequest").onclick = () => {
         })
         .then(response => {
             document.getElementById("txtFilms").innerText = "Films:"
+/*            console.log(response)*/
             collectionOfMovies = response.Search
             getInfoAboutSearch()
         })
@@ -70,9 +71,38 @@ function getInfoAboutSearch()
 
         ++countOfCard;
     })
+    buildInfoOfMovie()
 }
 
-function buildInfo(num)
+function buildInfoOfMovie()
 {
+    /*if (collectionOfMovies === null) return -1;
+    let tempCallNum = document.getElementById("inpCallForNum")
+    tempCallNum.style.visibility = 'visibility'
+    while (!tempCallNum.onchange) {}
+    tempCallNum.onchange = () =>
+    {
+        let numFromDetails =
+            document.getElementById("aClickAboutInfoMovie")
+            .innerText.split('№ ')[1]
+        console.log(numFromDetails)
+        if (tempCallNum.value > 0 && tempCallNum.value <= Number(numFromDetails)) {
+            document.getElementById("detailPoster").innerText =
+                collectionOfMovies[tempCallNum.value].Poster
+            document.getElementById("detailTitle").innerText =
+                collectionOfMovies[tempCallNum.value].Title
+            document.getElementById("detailType").innerText =
+                collectionOfMovies[tempCallNum.value].Type
+            document.getElementById("detailYear").innerText =
+                collectionOfMovies[tempCallNum.value].Year
+            document.getElementById("detailImdbID").innerText =
+                collectionOfMovies[tempCallNum.value].imdbID
+        }
 
+        document.getElementById("openDetailAboutMovie").style.visibility = 'visibility'
+        while (!document.getElementById("btnCloseWindowDetails").onclose) {}
+        document.getElementById("openDetailAboutMovie").style.visibility = 'hidden'
+
+        tempCallNum.style.visibility = 'hidden'
+    }*/
 }

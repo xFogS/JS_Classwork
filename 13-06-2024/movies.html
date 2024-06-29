@@ -24,8 +24,8 @@
            border-radius: 5px;
            border-style: none;
        }
-        #containerViewInfo { visibility: hidden; }
-        .backgroundAlertInfo { background-color: #FBF2E9; color: black; }
+        /*#containerViewInfo { visibility: hidden; }
+        .backgroundAlertInfo { background-color: #FBF2E9; color: black; }*/
     </style>
 </head>
 <body>
@@ -56,33 +56,27 @@
                <button id="btnSendRequest" type="button" class="btn btn-outline-warning" style="margin-left: 6em">Search</button>
            </div>
            <br>
-           <div id="containerViewInfo" style="display: flex">
+           <!--<div id="containerViewInfo" style="display: flex">-->
                <h1 id="txtFilms" style="font-size: 20px"></h1>
-               <div id="inpCallForNum" class="input-group input-group-sm mb-3" style="margin-left: 1em">
-                   <span class="input-group-text" id="inputGroup-sizing-sm">N Film</span>
+               <!--<div id="inpCallForNum" class="input-group input-group-sm mb-3" style="margin-left: 1em">
+                   <span class="input-group-text" id="inputGroup-sizing-sm">№</span>
                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                </div>
-               <div id="openDetailAboutMovie" class="alert backgroundAlertInfo alert-dismissible fade show" role="alert">
-                   <img id="detailImage" src="" alt=""
+               <div id="openDetailAboutMovie" class="alert backgroundAlertInfo alert-dismissible fade show" role="alert" style="visibility: hidden">
+                   <img id="detailPoster" src="" alt=""
                    style="border-radius: 10px">
                    <br><br>
-                   <p id="detailTitle"></p><hr>
-                   <p id="detailReleased"></p><hr>
-                   <p id="detailGenre"></p><hr>
-                   <p id="detailCountry"></p><hr>
-                   <p id="detailDirector"></p><hr>
-                   <p id="detailWriter"></p><hr>
-                   <p id="detailActors"></p><hr>
-                   <p id="detailAwards"></p><hr>
+                   <p id="detailTitle"></p>Title: <hr>
+                   <p id="detailType"></p>Type: <hr>
+                   <p id="detailYear"></p>Year: <hr>
+                   <p id="detailImdbID"></p>ID: <hr>
                    <button id="btnCloseWindowDetails" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           </div>
+               </div>-->
+           <!--</div>-->
            <br>
            <div id="blockMovies">
                <div id="formCard" class="card" style="width: 18rem;"></div>
-
            </div>
-
        </div>
    </main>
 </body>
