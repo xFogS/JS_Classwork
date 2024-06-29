@@ -24,6 +24,8 @@
            border-radius: 5px;
            border-style: none;
        }
+        #containerViewInfo { visibility: hidden; }
+        .backgroundAlertInfo { background-color: #FBF2E9; color: black; }
     </style>
 </head>
 <body>
@@ -54,23 +56,33 @@
                <button id="btnSendRequest" type="button" class="btn btn-outline-warning" style="margin-left: 6em">Search</button>
            </div>
            <br>
-           <h1 id="txtFilms" style="font-size: 20px"></h1>
-           <br>
-           <div id="blockMovies" style="display: inline-flex">
-               <div id="formCard" class="card" style="width: 18rem;"></div>
+           <div id="containerViewInfo" style="display: flex">
+               <h1 id="txtFilms" style="font-size: 20px"></h1>
+               <div id="inpCallForNum" class="input-group input-group-sm mb-3" style="margin-left: 1em">
+                   <span class="input-group-text" id="inputGroup-sizing-sm">N Film</span>
+                   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+               </div>
+               <div id="openDetailAboutMovie" class="alert backgroundAlertInfo alert-dismissible fade show" role="alert">
+                   <img id="detailImage" src="" alt=""
+                   style="border-radius: 10px">
+                   <br><br>
+                   <p id="detailTitle"></p><hr>
+                   <p id="detailReleased"></p><hr>
+                   <p id="detailGenre"></p><hr>
+                   <p id="detailCountry"></p><hr>
+                   <p id="detailDirector"></p><hr>
+                   <p id="detailWriter"></p><hr>
+                   <p id="detailActors"></p><hr>
+                   <p id="detailAwards"></p><hr>
+                   <button id="btnCloseWindowDetails" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
            </div>
-           <!--<div id="openDetailAboutMovie" class="alert alert-warning alert-dismissible fade show" role="alert">
-               <img id="detailImg">
-               <p id="detailTitle"></p>
-               <p id="detailReleased"></p>
-               <p id="detailGenre"></p>
-               <p id="detailCountry"></p>
-               <p id="detailDirector"></p>
-               <p id="detailWriter"></p>
-               <p id="detailActors"></p>
-               <p id="detailAwards"></p>
-               <button id="btnCloseWindowDetails" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-           </div>-->
+           <br>
+           <div id="blockMovies">
+               <div id="formCard" class="card" style="width: 18rem;"></div>
+
+           </div>
+
        </div>
    </main>
 </body>
