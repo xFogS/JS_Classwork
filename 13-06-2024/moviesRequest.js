@@ -2,42 +2,33 @@
     document.getElementById("navigatorOfMovie").style.visibility = "hidden"
 */
 //AJAX
-let imgPoster, category, titleMovie, year;
+let imgPoster, category, titleOfMovie, year;
 let collectionOfMovies = []
-document.getElementById("btnSendRequest").onclick = function ()
+document.getElementById("btnSendRequest").onclick = () =>
 {
-    switch (document.getElementById("inputGroupSelect01").selectedIndex)
-    {
-        case 0: {category = 'Movie'; break;}
-        case 1: {category = 'Series'; break;}
-        case 2: {category = 'Episode'; break;}
-    }
+    indxOfSelectToType = document.getElementById("selectOfType").selectedIndex;
+    category = document.getElementById("selectOfType")[indxOfSelectToType].text;
 
-    fetch('',
-        {
-            method: 'POST',
-            body: JSON.stringify(
-                {
-                    "Title": document.getElementById("inpTitleOfMovie").innerText,
-                    "Type": category
-                }
-            )
-        })
-        .then(res => {
-            if (res.status === 200)
-                return res.json()
+    const url = 'http://www.omdbapi.com/?'
+    const apiKey = '&apikey=b307a83f'
+    titleOfMovie = document.getElementById("inpTitleOfMovie").value
+    fetch(url + 't=' + titleOfMovie + '&type=' + category.toString().toLowerCase() + apiKey)
+        .then(request => {
+            if (request.status === 200)
+                return request.json()
         })
         .then(response =>
         {
-            collectionOfMovies = response;
-            getInfoAboutSearch();
+            collectionOfMovies = response
+            getInfoAboutSearch()
         })
-        .catch(err => console.log(err.message))
 }
 function getInfoAboutSearch()
 {
+    console.log(collectionOfMovies)
     collectionOfMovies.forEach(response =>
     {
-        console.log(response)
+        imgPoster = response.Poster
+        year = response.Year
     })
 }
