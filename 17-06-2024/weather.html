@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styleWeather.css">
 </head>
 <body>
-    <main>
+    <main id="container">
         <!--https://www.weatherapi.com/docs/-->
 <!--        <div id="containerWeather" style="padding: 1em 25% 5em 35%">-->
             <article class="widget">
@@ -16,12 +16,25 @@
                 <div id="currentWeatherInfo" class="weatherInfo">
                     <div id="currentTemperature" class="temperature">25&deg;</div>
                     <div id="nowDescription" class="description">
-                        <div id="currentWeatherCondition" class="weatherCondition">CLOUDY</div>
-                        <div id="currentPlace" class="place">New York, New York</div> <!--тут будемо заповнювати з даних-->
+                        <div class="weatherCondition">
+                            <div id="currentWeatherCondition" class="weatherCondition" style="text-align: center">CLOUDY</div>
+                            <div id="cWind">Wind: 11.2 kph</div>
+                            <div id="cPrecip">Precip: 0.0mm</div>
+                            <div id="cPressure">Pressure: 1006mb</div>
+                            <div id="currentPlace" class="place">New York, New York</div>
+                        </div>
+                         <!--тут будемо заповнювати з даних-->
                     </div>
                 </div>
-                <div id="dtNow" class="date">1st Jan</div> <!--тут будемо заповнювати з даних-->
+                <div id="dtNow" class="date">1st Jan</div>
             </article>
+<!--        <div id="nextDaysWeatherOfCard" class="card" style="width: 20rem;">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>-->
         <!--</div>-->
     </main>
 </body>
