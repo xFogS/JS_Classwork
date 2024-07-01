@@ -1,20 +1,9 @@
 let url = 'https://api.novaposhta.ua/v2.0/json/'
-let apiKey = 'api'
+let apiKey = ''
 
 let arrOfRegion = []
 let arrOfCity = []
-
-let selectRegion = document.getElementById("slcRegion")
-let optionRegion = { }
-createElementForNP(selectRegion, arrOfRegion, 'getAreas', optionRegion, buildOfRegion)
-
-document.getElementById("slcRegion").onchange = () =>
-{
-    let selectOfCity;
-    console.log(selectRegion.value)
-    let optionCity = { "AreaRef": selectRegion.value }
-    createElementForNP(selectOfCity, arrOfCity, 'getSettlements', optionCity, buildOfCity)
-}
+let arrOfPostOffice = []
 
 function createElementForNP(prop, arrOf, callMethod, options, func)
 {
@@ -32,34 +21,27 @@ function createElementForNP(prop, arrOf, callMethod, options, func)
         .then(response =>
         {
             arrOf = response.data;
-            logger.info += response;
+            logger.info += response + '\n';
             console.log(arrOf)
             return func(prop, arrOf)
         })
         .catch(err => { logger.error += err.message + '\n'; })
 }
-function buildOfRegion(slcRegion, arr)
+let selectRegion = document.getElementById("slcRegion")
+let optionRegion = { }
+createElementForNP(selectRegion, arrOfRegion, 'getAreas', optionRegion, buildOfRegion)
+
+selectRegion.onchange = () =>
 {
-    slcRegion.innerText = ''
-    arr.forEach(res =>
-    {
-        let op = document.createElement('option')
-        op.value = res.Ref
-        op.dataset.AreasCenter = res.AreasCenter
-        op.innerText = res.Description
-        slcRegion.appendChild(op)
-    })
+    let selectOfCity = document.getElementById("slcCity");
+    let optionCity = { "AreaRef": selectRegion.value }
+    createElementForNP(selectOfCity, arrOfCity, 'getCities', optionCity, buildOfCity)
 }
-function buildOfCity(slcCity, arr)
+
+let selectCity = document.getElementById("slcCity")
+selectCity.onchange = () =>
 {
-    slcCity.innerText = ''; slcCity.style.visibility = 'visible'
-    console.log('here')
-    arr.forEach(res =>
-    {
-        let op = document.createElement("option")
-        op.value = res.Ref
-        op.innerText = res.Description
-        slcCity.appendChild(op)
-    })
-    document.getElementById("container").appendChild(slcCity)
+    let selectOfPostOffice = document.getElementById("slcPost");
+    let optionPostOffice = { "CityRef": selectCity.value }
+    createElementForNP(selectOfPostOffice, arrOfPostOffice, 'getWarehouses', optionPostOffice, buildOfPostOffice)
 }
