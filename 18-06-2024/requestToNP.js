@@ -1,5 +1,5 @@
 let url = 'https://api.novaposhta.ua/v2.0/json/'
-let apiKey = ''
+let apiKey = 'api'
 
 let arrOfRegion = []
 let arrOfCity = []
