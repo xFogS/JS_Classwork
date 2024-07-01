@@ -33,8 +33,8 @@ function createElementForNP(prop, arrOf, callMethod, options, func)
         {
             arrOf = response.data;
             logger.info += response;
-            console.log(response)
-            func(prop, arrOf)
+            console.log(arrOf)
+            return func(prop, arrOf)
         })
         .catch(err => { logger.error += err.message + '\n'; })
 }
